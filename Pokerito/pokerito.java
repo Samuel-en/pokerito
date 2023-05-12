@@ -6,7 +6,6 @@ public class pokerito{
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-
         System.out.println("Let's play Pokerito. Type anything when you're ready.");
         scan.nextLine();
         System.out.println("It's like Poker, but a lot simpler.");
@@ -17,7 +16,28 @@ public class pokerito{
         System.out.println("- If the matches are equal, everyone's a winner");
         System.out.println("- Ready? Type anything if you are.");
         scan.nextLine();
+        
+
+        String yourCard = randomCard();
+        String computerCard = randomCard();
+
+        System.out.println("\nHere is your card: ");
+        System.out.print(yourCard);
+        System.out.println("\nHere is computer card: ");
+        System.out.print(computerCard);
+
+        
+        System.out.println("Now, the dealer will draw five cards. Press enter to continue.");
+        for (int i = 1; i <= 5 ; i++) {
+            scan.nextLine();
+            String draw = randomCard();
+            System.out.println("Card " + i);
+            System.out.println(draw);
+            
+        }
+        scan.close();
     }
+
     public static String randomCard(){
 
         double randomNum = Math.random() * 13;
@@ -108,4 +128,31 @@ public class pokerito{
                 
         }
     }
+    // public static void printRules(){
+
+    //     Scanner scan = new Scanner(System.in);
+    //     System.out.println("Let's play Pokerito. Type anything when you're ready.");
+    //     scan.nextLine();
+    //     System.out.println("It's like Poker, but a lot simpler.");
+    //     System.out.println("- There are two players, you and the computer.");
+    //     System.out.println("- The dealer will give each player one card.");
+    //     System.out.println("- Then, the dealer will draw five cards (the river)");
+    //     System.out.println("- The player with the most river matches wins!");
+    //     System.out.println("- If the matches are equal, everyone's a winner");
+    //     System.out.println("- Ready? Type anything if you are.");
+    //     scan.nextLine();
+
+    //     scan.close();
+    // }
+
+    // public static void riverCards(){
+
+    //     Scanner scan = new Scanner(System.in);
+    //     System.out.println("Now, the dealer will draw five cards. Press enter to continue.");
+    //     scan.nextLine();
+    //     for (int i = 1; i < 5 ; i++) {
+    //         System.out.println(randomCard());
+    //     }
+    //     scan.close();
+    // }
 }
