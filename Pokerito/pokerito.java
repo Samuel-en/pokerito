@@ -26,16 +26,39 @@ public class pokerito{
         System.out.println("\nHere is computer card: ");
         System.out.print(computerCard);
 
-        
+        int yourMatches = 0;
+        int computerMatches = 0;
+
         System.out.println("Now, the dealer will draw five cards. Press enter to continue.");
         for (int i = 1; i <= 5 ; i++) {
             scan.nextLine();
             String draw = randomCard();
             System.out.println("Card " + i);
             System.out.println(draw);
-            
+
+            if(yourCard.equals(draw)){
+                yourMatches++;
+            }else if(computerCard.equals(draw)){
+                computerMatches++;
+            }
         }
+
+        System.out.println("Your number of matches: " + yourMatches);
+        System.out.println("Computer number of matches: " + computerMatches);
+            
+            if(yourMatches > computerMatches){
+                System.out.println("you win");
+            }else if(computerMatches > yourMatches){
+                System.out.println("computer wins");
+            }else{
+                System.out.println("its a draw. ");
+            }
+
         scan.close();
+
+        
+
+        
     }
 
     public static String randomCard(){
